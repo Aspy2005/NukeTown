@@ -5,28 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grafica ciruc</title>
     <link rel="stylesheet" href="../templates/nav/nav.css">
+    <link rel="stylesheet" href="../assets/css/graficabarras/stylebarras.css"
     <script src="../assets/js/graficatorta/graficatorta.js"></script>
 </head>
 <body>
     <nav>
-        <ul>
-            <li>
-                <img src="../templates/nav/iconosnav/logo.png" id="logo" alt="Logo">
-            </li>
-            <li>
-                <img src="../templates/nav/iconosnav/casita.png" alt="Inicio">
-                <a href="../inicio/Inicio.html">Inicio</a>
-            </li>
-            <li>
-                <img src="../templates/nav/iconosnav/documento.png" alt="DashBoard/Base de Datos">
-                <a href="../dashboard/dashboard.html">DashBoard/Base de Datos</a>
-            </li>
-            <li>
-                <img src="../templates/nav/iconosnav/calculadora.png" alt="Calculadora Consumo">
-                <a href="../calculadora/calculadora.html">Calculadora Consumo</a>
-            </li>
-        </ul>
-    </nav>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="menu" id="menu">
+                <li>
+                    <img src="../templates/nav/iconosnav/logo.png" id="logo" alt="Logo">
+                </li>
+                <li>
+                    <img src="../templates/nav/iconosnav/casita.png" alt="Inicio">
+                    <a href="../inicio/Inicio.html">Inicio</a>
+                </li>
+                <li>
+                    <img src="../templates/nav/iconosnav/documento.png" alt="DashBoard/Base de Datos">
+                    <a href="../dashboard/dashboard.html">DashBoard/Base de Datos</a>
+                </li>
+                <li>
+                    <img src="../templates/nav/iconosnav/calculadora.png" alt="Calculadora Consumo">
+                    <a href="../calculadora/calculadora.html">Calculadora Consumo</a>
+                </li>
+            </ul>
+        </nav>
+        <script src="/templates/nav/botoninicio.js"></script>
 
     <div id="divtorta"><canvas id="graficacircular", width="800", height="800"></canvas></div>
 
