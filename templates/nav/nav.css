@@ -1,40 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 nav {
     background-color: #5da041;
     color: white;
-    padding: 3px 0;
+    position: relative;
+    z-index: 1000; /* Alta prioridad para superponerse */
 }
 
-ul {
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 1001; /* Más alto que el nav */
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+ul.menu {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
+    z-index: 999; /* Asegura que esté en la capa correcta */
 }
 
-li {
+ul.menu li {
     margin: 0;
     padding: 0 20px;
     display: flex;
     align-items: center;
 }
 
-li img {
+ul.menu li img {
     width: 30px;
     margin-right: 10px;
 }
 
-#logo {
+ul.menu #logo {
     width: 40px;
 }
 
-a {
+ul.menu a {
     text-decoration: none;
     color: white;
     font-weight: bold;
 }
 
-a:hover {
+ul.menu a:hover {
     text-decoration: underline;
 }
 
@@ -44,20 +69,44 @@ nav li img:hover {
 }
 
 @media (max-width: 768px) {
-    nav ul {
+    .menu-toggle {
+        display: flex;
+    }
+
+    ul.menu {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        max-height: 50%;
+        background-color: rgba(0, 0, 0, 0.8);
+        text-align: left;
+        transition: left 0.4s;
+        padding: 20px;
+        z-index: 1001; /* Asegura que esté sobre otros elementos */
     }
 
-    li {
-        margin: 10px 0;
+    ul.menu li {
+        margin: 15px 0;
     }
 
-    li img {
+    ul.menu #logo {
+        width: 35px;
+    }
+
+    ul.menu li img {
         width: 25px;
     }
 
-    #logo {
-        width: 35px;
+    ul.menu.show {
+        left: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    ul.menu {
+        width: 70%;
     }
 }
