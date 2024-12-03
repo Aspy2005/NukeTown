@@ -1,7 +1,6 @@
-async function fetchCSV(select) {
+async function fetchCSV() {
 
-    console.log(select);
-    const response = await fetch('pruebacsv'); 
+    const response = await fetch('../csv/indefinidos.csv'); 
     const data = await response.text(); 
 
     const rows = data.split('\n').slice(1); 
@@ -10,30 +9,22 @@ async function fetchCSV(select) {
     const values = [];
 
 
+    rows.forEach(row => {
+        const [label, value] = row.split(','); 
+        labels.push(label); 
+        values.push(parseFloat(value)); 
+    });
     
-    if (select == 0 ){
-        rows.forEach(row => {
-            const [label, value] = row.split(','); 
-            labels.push(label); 
-            values.push(parseFloat(value)); 
-        });
-    }else{
-        rows.forEach(row => {
-            const [label, value] = row.split(','); 
-            if(select == label){
-                labels.push(label); 
-                values.push(parseFloat(value)); 
-            }
-                    
-        });
-    }
        
-
+    console.log(labels);
     return { labels, values };
+    
       
 }
 
-async function createChartbar(data) {
+async function createChartbar() {
+
+    const data = await fetchCSV();
 
 
     const ctx = document.getElementById('graficabarras').getContext('2d');
@@ -59,7 +50,9 @@ async function createChartbar(data) {
     });
 }
 
-async function createPieChart(data) {
+async function createPieChart() {
+
+    const data = await fetchCSV();
 
     const ctx = document.getElementById('graficacircular').getContext('2d');
     new Chart(ctx, {
@@ -81,7 +74,9 @@ async function createPieChart(data) {
     });
 }
 
-async function createLineChart(data) {
+async function createLineChart() {
+
+    const data = await fetchCSV();
 
     const ctx = document.getElementById('graficalinea').getContext('2d');
     new Chart(ctx, {
@@ -106,7 +101,9 @@ async function createLineChart(data) {
     });
 }
 
-async function createAreaChart(data) {
+async function createAreaChart() {
+
+    const data = await fetchCSV();
 
     const ctx = document.getElementById('graficaarea').getContext('2d');
     new Chart(ctx, {
@@ -133,74 +130,7 @@ async function createAreaChart(data) {
 }
 
 
-async function createlista(){
-    
-    const data = await fetchCSV(document.getElementById("seleccion").value);
-
-    const listado = document.getElementById("seleccion");
-
-    for (i=0; i< data.labels.length ; i++){
-            if(data.labels[i] !== data.labels[i+1]){
-                const celda = document.createElement("option");
-                celda.textContent = data.labels[i].label;
-                celda.value = data.labels[i].value;
-                listado.appendChild(celda);
-            }
-        
-    }
-    console.log(listado.options);
-}
-
-function actualizarGrafica(elementId, type, data, label) {
-    const canvas = document.getElementById(elementId);
-    const ctx = canvas.getContext('2d');
-
-    if (canvas.chartInstance) {
-        canvas.chartInstance.data.labels = data.labels;
-        canvas.chartInstance.data.datasets[0].data = data.values;
-        canvas.chartInstance.update();
-    } else {
-        
-        canvas.chartInstance = new Chart(ctx, {
-            type: type,
-            data: {
-                labels: data.labels,
-                datasets: [{
-                    label: label,
-                    data: data.values,
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    }
-}
-
-
-document.addEventListener("DOMContentLoaded",async ()=>{
-
-    console.log(document.getElementById("seleccion").value);     
-
-    createlista();
-
-    document.getElementById("seleccion").addEventListener('change', async ()=>{
-
-        const select = document.getElementById("seleccion").value;
-
-        const data = await fetchCSV(select);
-
-        actualizarGrafica('graficabarras', 'bar', data, 'Notas');
-        actualizarGrafica('graficacircular', 'pie', data, 'Notas');
-        actualizarGrafica('graficalinea', 'line', data, 'Notas');
-        actualizarGrafica('graficaarea', 'line', data, 'Área');
-
-    }); 
-})
+createChartbar();
+createPieChart()
+createLineChart()
+createAreaChart()
