@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navegacion</title>
+    <title>Menú de Navegación Responsivo</title>
+    <link rel="stylesheet" href="/templates/nav/nav.css">
 </head>
 <body>
     <nav>
-        <ul>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="menu" id="menu">
             <li>
                 <img src="/templates/nav/iconosnav/logo.png" id="logo" alt="Logo">
             </li>
@@ -25,5 +31,6 @@
             </li>
         </ul>
     </nav>
+    <script src="/templates/nav/botoninicio.js"></script>
 </body>
 </html>
