@@ -28,7 +28,30 @@
             </li>
         </ul>
     </nav>
-    <canvas id="graficacircular", width="800", height="800"></canvas>
+
+    <div id="divtorta"><canvas id="graficacircular", width="800", height="800"></canvas></div>
+
+
+    <div id="menucsv">
+        <button id="eolica">energia eolica</button>
+        <button id="hidrica">energia hidrica</button>
+        <button id="solar">energia solar</button>
+    </div>
+
+    <div id="tabladiv">
+        <table id="tabladatos">
+            <thead>
+                <tr>
+                    <th>Entity</th>
+                    <th>Code</th>
+                    <th>Year</th>
+                    <th>Electricity from wind (TWh)</th>
+                </tr>
+            </thead>
+        
+        <tbody></tbody>
+    </table>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
