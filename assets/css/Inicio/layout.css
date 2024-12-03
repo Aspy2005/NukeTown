@@ -20,7 +20,7 @@ section {
 }
 
 #apartado1 {
-    background-image: url('/assets/img/Inicio/banner-energias-limpias.png');
+    background-image: url('../assets/img/Inicio/banner-energias-limpias.png');
     background-size: cover; /* Cubre el área del contenedor */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita repeticiones */
@@ -55,15 +55,15 @@ section {
 }
 
 #apartado2 {
-    background-image: url('/assets/img/Inicio/forma1.png');
+    background-image: url('../assets/img/Inicio/forma1.png');
 }
 
 #apartado3 {
-    background-image: url('/assets/img/Inicio/forma2.png');
+    background-image: url('../assets/img/Inicio/forma2.png');
 }
 
 #apartado4 {
-    background-image: url('/assets/img/Inicio/forma1.png');
+    background-image: url('../assets/img/Inicio/forma1.png');
 }
 
 #apartado2 .content img, #apartado3 .content img, #apartado4 .content img {
