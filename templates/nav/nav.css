@@ -8,6 +8,7 @@ nav {
     background-color: #5da041;
     color: white;
     position: relative;
+    z-index: 1000; /* Alta prioridad para superponerse */
 }
 
 .menu-toggle {
@@ -17,12 +18,13 @@ nav {
     position: absolute;
     right: 20px;
     top: 15px;
+    z-index: 1001; /* Más alto que el nav */
 }
 
 .menu-toggle span {
     width: 25px;
     height: 3px;
-    background: rgb(171, 163, 163);
+    background: white;
     margin: 4px 0;
     transition: 0.4s;
 }
@@ -32,7 +34,7 @@ ul.menu {
     margin: 0;
     padding: 0;
     display: flex;
-    
+    z-index: 999; /* Asegura que esté en la capa correcta */
 }
 
 ul.menu li {
@@ -67,10 +69,6 @@ nav li img:hover {
 }
 
 @media (max-width: 768px) {
-
-    nav{
-        background-color:unset;
-    }
     .menu-toggle {
         display: flex;
     }
@@ -81,12 +79,13 @@ nav li img:hover {
         position: fixed;
         top: 0;
         left: -100%;
-        width: 40%;
+        width: 50%;
         max-height: 50%;
         background-color: rgba(0, 0, 0, 0.8);
         text-align: left;
         transition: left 0.4s;
         padding: 20px;
+        z-index: 1001; /* Asegura que esté sobre otros elementos */
     }
 
     ul.menu li {
@@ -106,8 +105,8 @@ nav li img:hover {
     }
 }
 
-@media (max-width: 400px){
-    ul.menu{
+@media (max-width: 400px) {
+    ul.menu {
         width: 70%;
     }
 }
