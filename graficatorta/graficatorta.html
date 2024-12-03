@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grafica ciruc</title>
+    <title>Gráfica Circular</title>
     <link rel="stylesheet" href="../templates/nav/nav.css">
-    <link rel="stylesheet" href="../assets/css/graficabarras/stylebarras.css"
+    <link rel="stylesheet" href="../assets/css/graficabarras/stylebarras.css">
     <script src="../assets/js/graficatorta/graficatorta.js"></script>
 </head>
 <body>
@@ -16,49 +16,52 @@
             <span></span>
         </div>
         <ul class="menu" id="menu">
-                <li>
-                    <img src="../templates/nav/iconosnav/logo.png" id="logo" alt="Logo">
-                </li>
-                <li>
-                    <img src="../templates/nav/iconosnav/casita.png" alt="Inicio">
-                    <a href="../inicio/Inicio.html">Inicio</a>
-                </li>
-                <li>
-                    <img src="../templates/nav/iconosnav/documento.png" alt="DashBoard/Base de Datos">
-                    <a href="../dashboard/dashboard.html">DashBoard/Base de Datos</a>
-                </li>
-                <li>
-                    <img src="../templates/nav/iconosnav/calculadora.png" alt="Calculadora Consumo">
-                    <a href="../calculadora/calculadora.html">Calculadora Consumo</a>
-                </li>
-            </ul>
-        </nav>
-        <script src="/templates/nav/botoninicio.js"></script>
+            <li>
+                <img src="../templates/nav/iconosnav/logo.png" id="logo" alt="Logo">
+            </li>
+            <li>
+                <img src="../templates/nav/iconosnav/casita.png" alt="Inicio">
+                <a href="../inicio/Inicio.html">Inicio</a>
+            </li>
+            <li>
+                <img src="../templates/nav/iconosnav/documento.png" alt="DashBoard/Base de Datos">
+                <a href="../dashboard/dashboard.html">DashBoard/Base de Datos</a>
+            </li>
+            <li>
+                <img src="../templates/nav/iconosnav/calculadora.png" alt="Calculadora Consumo">
+                <a href="../calculadora/calculadora.html">Calculadora Consumo</a>
+            </li>
+        </ul>
+    </nav>
+    <script src="/templates/nav/botoninicio.js"></script>
 
-    <div id="divtorta"><canvas id="graficacircular", width="800", height="800"></canvas></div>
+    <div id="contenedor">
+        <div id="graficaytabla">
+            <div id="divtorta">
+                <canvas id="graficacircular" width="800" height="800"></canvas>
+            </div>
 
+            <div id="tabladiv">
+                <div id="menucsv">
+                    <button id="eolica">Energía Eólica</button>
+                    <button id="hidrica">Energía Hídrica</button>
+                    <button id="solar">Energía Solar</button>
+                </div>
+                <table id="tabladatos">
+                    <thead>
+                        <tr>
+                            <th>Entity</th>
+                            <th>Code</th>
+                            <th>Year</th>
+                            <th>Electricity from wind (TWh)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
 
-    <div id="menucsv">
-        <button id="eolica">energia eolica</button>
-        <button id="hidrica">energia hidrica</button>
-        <button id="solar">energia solar</button>
     </div>
-
-    <div id="tabladiv">
-        <table id="tabladatos">
-            <thead>
-                <tr>
-                    <th>Entity</th>
-                    <th>Code</th>
-                    <th>Year</th>
-                    <th>Electricity from wind (TWh)</th>
-                </tr>
-            </thead>
-        
-        <tbody></tbody>
-    </table>
-    </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
