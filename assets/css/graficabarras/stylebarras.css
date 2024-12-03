@@ -1,3 +1,85 @@
-#contendor{
-    background-color: aqua;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+
+#contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#graficaytabla {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+}
+
+#barragrafico, 
+#tabladiv {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid #3B6625;
+    background-color: #E0EFFF;
+    text-align: center;
+    width: 30rem;
+}
+
+#menucsv {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#menucsv button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #3B6625;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#menucsv button:hover {
+    background-color: #4b7437;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #3B6625;
+    color: #fff;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #graficaytabla {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #barragrafico, 
+    #tabladiv {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
 }
