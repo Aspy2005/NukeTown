@@ -21,31 +21,29 @@ section {
 
 #apartado1 {
     background-image: url('/assets/img/Inicio/banner-energias-limpias.png');
-    background-size: cover; /* Cubre el área del contenedor */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita repeticiones */
-    width: 100%; /* Ocupa todo el ancho */
-    height: 25vh; /* Altura inicial para pantallas grandes */
-    overflow: hidden; /* Oculta contenido adicional */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    width: 100%; 
+    height: 25vh; 
+    overflow: hidden; 
 }
 
 @media (max-width: 1200px) {
     #apartado1 {
-        height: 20vh; /* Reduce la altura para pantallas medianas */
+        height: 20vh; 
     }
 }
 
-/* Ajuste para pantallas pequeñas */
 @media (max-width: 800px) {
     #apartado1 {
-        height: 15vh; /* Altura ajustada */
+        height: 15vh; 
     }   
 }
 
-/* Ajuste para pantallas muy pequeñas */
 @media (max-width: 480px) {
     #apartado1 {
-        height: 10vh; /* Ajusta la altura aún más */
+        height: 10vh; 
     }
 }
 
