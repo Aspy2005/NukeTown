@@ -83,3 +83,19 @@ th, td {
         margin: 10px 0;
     }
 }
+
+@media (max-width: 400px) {
+    #graficaytabla {
+         flex-direction: column; 
+         align-items: center; 
+        } 
+    #barragrafico, #tabladiv { 
+        flex: 1 1 100%; 
+        margin: 10px 0; 
+        width: 100%;  
+    } table { 
+        font-size: 0.7rem;  
+    } th, td { 
+        padding: 3px; 
+         
+    } }
