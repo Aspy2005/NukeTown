@@ -123,9 +123,9 @@ function manejarAccion(buttonId) {
 }
 
 
-async function mostrartabla(select){
- console.log ("entro en la funcion mostrar tabla");
- // Función para cargar el archivo CSV y procesarlo
+async function mostrartabla(select) {
+    console.log("Entro en la función mostrar tabla");
+
     try {
         const respuesta = await fetch(array[select]); // Cargar el archivo CSV
         const texto = await respuesta.text(); // Leer el contenido como texto
@@ -135,7 +135,10 @@ async function mostrartabla(select){
         const cuerpo = lineas.slice(1); // Obtener las filas de datos
 
         const tbody = document.querySelector("#tabladatos tbody");
-        console.log (tbody);
+        console.log(tbody);
+
+        // Limpiar el contenido previo del tbody
+        tbody.innerHTML = "";
 
         // Recorrer cada línea de datos
         cuerpo.forEach((linea) => {
@@ -158,6 +161,7 @@ async function mostrartabla(select){
         console.error("Error al cargar el archivo CSV:", error);
     }
 }
+
 
 
 
