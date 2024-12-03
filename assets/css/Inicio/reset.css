@@ -1,0 +1,15 @@
+body, h1, h2, h3, p, ul, ol, li, figure, blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.5;
+    background-color: #F2F2F2;
+}

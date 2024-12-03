@@ -1,0 +1,66 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 200px;
+    width: 80%;
+}
+
+.content:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.content .text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.content p {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.content img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .content img {
+        width: 80%;
+        max-height: 250px;
+    }
+
+    .content .text {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    #apartado2:hover, #apartado3:hover, #apartado4:hover {
+        background-color: rgba(93, 160, 65, 0.7);
+        transform: scale(1.05);
+    }
+}

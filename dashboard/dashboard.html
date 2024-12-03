@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" href="/templates/nav/iconosnav/logo.png">
+    <link rel="stylesheet" href="/assets/css/Dashboard/style.css">
+    <link rel="stylesheet" href="/templates/footer/footer.css">
+    <link rel="stylesheet" href="/templates/nav/nav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/assets/js/dashboard/dashboard.js"></script>
+    
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <img src="/templates/nav/iconosnav/logo.png" id="logo" alt="Logo">
+            </li>
+            <li>
+                <img src="/templates/nav/iconosnav/casita.png" alt="Inicio">
+                <a href="/inicio/Inicio.html">Inicio</a>
+            </li>
+            <li>
+                <img src="/templates/nav/iconosnav/documento.png" alt="DashBoard/Base de Datos">
+                <a href="/dashboard/dashboard.html">DashBoard/Base de Datos</a>
+            </li>
+            <li>
+                <img src="/templates/nav/iconosnav/calculadora.png" alt="Calculadora Consumo">
+                <a href="/calculadora/calculadora.html">Calculadora Consumo</a>
+            </li>
+        </ul>
+    </nav>
+
+     <div class="arriba">
+        <div id="seleccionador">
+            <label for="prueba">Selecciona el pais</label>
+            <select name="prueba" id="seleccion">
+                <option value="0">ingrese pais</option>
+            </select>
+        </div>
+        <div id="bargraphics"><canvas id='graficabarras' width='500' height='500'></canvas></div>
+     </div>
+   
+
+    <div class="graphics-row">
+        <div id="paigraphics" class="graphic-box">
+            <canvas id="graficacircular" width="50" height="50"></canvas>
+            
+        </div>
+        <div id="linegraphics" class="graphic-box">
+            <canvas id="graficalinea" width="50" height="50"></canvas>
+        </div>
+        <div id="areagraphics" class="graphic-box">
+            <canvas id="graficaarea" width="50" height="50"></canvas>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Energías Renovables. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#privacy">Política de Privacidad</a></li>
+                <li><a href="#contact">Contáctanos</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

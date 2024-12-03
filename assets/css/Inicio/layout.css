@@ -1,0 +1,184 @@
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #F2F2F2;
+    border-bottom: 1px solid #ddd;
+}
+
+#apartado1, #apartado2, #apartado3, #apartado4 {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.5s ease, background-color 1.5s ease;
+}
+
+#apartado1 {
+    background-image: url('/assets/img/Inicio/banner-energias-limpias.png');
+    background-size: cover; /* Cubre el área del contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita repeticiones */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 25vh; /* Altura inicial para pantallas grandes */
+    overflow: hidden; /* Oculta contenido adicional */
+}
+
+@media (max-width: 1200px) {
+    #apartado1 {
+        height: 20vh; /* Reduce la altura para pantallas medianas */
+    }
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 800px) {
+    #apartado1 {
+        height: 15vh; /* Altura ajustada */
+    }   
+}
+
+/* Ajuste para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    #apartado1 {
+        height: 10vh; /* Ajusta la altura aún más */
+    }
+}
+
+
+#apartado2, #apartado3, #apartado4 {
+    background-color: #5da041;
+}
+
+#apartado2 {
+    background-image: url('/assets/img/Inicio/forma1.png');
+}
+
+#apartado3 {
+    background-image: url('/assets/img/Inicio/forma2.png');
+}
+
+#apartado4 {
+    background-image: url('/assets/img/Inicio/forma1.png');
+}
+
+#apartado2 .content img, #apartado3 .content img, #apartado4 .content img {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+#apartado2 .content, #apartado3 .content, #apartado4 .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 1200px;
+    min-height: 350px;
+    height: auto;
+    max-height: 500px;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#apartado2 .content h2, #apartado3 .content h2, #apartado4 .content h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2rem; 
+    font-weight: bold; 
+    margin-bottom: 10px;
+    color: #ffffff;
+    line-height: 1.4;
+    transition: opacity 0.3s ease; 
+    opacity: 1; 
+}
+
+#apartado2 .content p, #apartado3 .content p, #apartado4 .content p {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: #e0e0e0;
+    max-height: 200px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+#apartado4 .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+#apartado4 .text {
+    width: 60%;
+    text-align: left;
+    color: white;
+    overflow-y: auto;
+    max-height: 450px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+#apartado4 .text ul {
+    padding-left: 20px;
+    color: #e0e0e0;
+    font-size: 10px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+#apartado4 .text ul li {
+    margin-bottom: 10px;
+}
+
+#apartado4 .content img {
+    width: 35%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    max-height: 350px;
+}
+
+#apartado2:hover, #apartado3:hover, #apartado4:hover {
+    background-image: none;
+    background-color: rgba(93, 160, 65, 0.7);
+    transform: scale(1.05);
+    animation: fondoTransicion 1.5s ease forwards;
+}
+
+#apartado2:hover .content, #apartado3:hover .content, #apartado4:hover .content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#apartado2:hover .pinicial, #apartado4:hover .pinicial, #apartado3:hover .pinicial  {
+    opacity: 0;
+}
+
+
+@keyframes fondoTransicion {
+    0% {
+        background-color: rgba(93, 160, 65, 0.3);
+    }
+    100% {
+        background-color: rgba(18, 46, 5, 0.7);
+    }
+}
