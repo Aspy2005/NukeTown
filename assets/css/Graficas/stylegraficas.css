@@ -42,7 +42,9 @@ body {
     text-align: center;
     border-radius: 8px;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    width: 30rem; /* Valor común para mantener consistencia */
+    width: 30rem; 
+    overflow-x: auto; 
+
 }
 
 #tabladivarea {
@@ -99,7 +101,7 @@ th, td {
     #tabladivarea {
         flex: 1 1 100%;
         margin: 15px 0;
-        width: 90%; /* Ajustes para pantallas más pequeñas */
+        width: 90%; 
     }
 }
 
@@ -116,7 +118,7 @@ th, td {
     #tabladivarea {
         flex: 1 1 100%;
         margin: 10px 0;
-        width: 100%; /* Ajustes para pantallas más pequeñas */
+        width: 100%;
     }
 
     table {
