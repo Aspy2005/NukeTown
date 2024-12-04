@@ -43,27 +43,38 @@
     <script src="/templates/nav/botoninicio.js"></script>
 
      <div class="arriba">
-        <div id="seleccionador">
-            <label for="prueba">Selecciona el pais</label>
-            <select name="prueba" id="seleccion">
-                <option value="0">ingrese pais</option>
-            </select>
+        <div class="graphic-box", onclick="window.location.href='../tabla/tabla.html'">
+            <table id="tabladatos">
+                <thead>
+                    <tr>
+                        <th>undifed</th>
+                        <th>undifed</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        <div class="graphic-title">Tabla de Datos</div>
         </div>
-        <div id="bargraphics", onclick="window.location.href='../graficabarras/graficabarra.html';">
-            <canvas id='graficabarras' width='500' height='500'></canvas></div>
+        <div class="graphic-box", id="bargraphics", onclick="window.location.href='../graficabarras/graficabarra.html';">
+            <canvas id='graficabarras' width='500' height='500'></canvas>
+            <div class="graphic-title">Gráfica de Barras</div>
         </div>
+            
+    </div>
    
 
     <div class="graphics-row">
         <div id="paigraphics" class="graphic-box", onclick="window.location.href='../graficatorta/graficatorta.html'">
             <canvas id="graficacircular" width="50" height="50"></canvas>
-            
+            <div class="graphic-title">Gráfica de Torta</div>
         </div>
         <div id="linegraphics" class="graphic-box", onclick="window.location.href='../graficalinea/graficalinea.html'">
             <canvas id="graficalinea" width="50" height="50"></canvas>
+            <div class="graphic-title">Gráfica de Linea</div>
         </div>
         <div id="areagraphics" class="graphic-box", onclick="window.location.href='../graficaarea/graficaarea.html'">
             <canvas id="graficaarea" width="50" height="50"></canvas>
+            <div class="graphic-title">Gráfica de area</div>
         </div>
     </div>
 
