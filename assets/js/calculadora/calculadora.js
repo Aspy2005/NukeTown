@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const consumoColombiaTWh = 0.32;
 
       
-      const porcentajeConsumo = ((consumoAnualTWh / consumoColombiaTWh) * 100).toFixed(2);
+      const porcentajeConsumo = ((consumoAnualTWh * consumoColombiaTWh)).toFixed(2);
 
       resultadoElement.textContent = `
-          Su consumo anual representa el ${porcentajeConsumo}% del consumo total de Colombia respecto al 2021 (0.31732163).
+          Su consumo anual representa el ${porcentajeConsumo}% del consumo total en energia solar de Colombia respecto al 2021.
       `;
   });                                                               
 });
