@@ -80,6 +80,35 @@ html, body {
     margin: 10px auto; 
 }
 
+.graphic-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.graphic-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: green;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.graphic-box:hover canvas {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.graphic-box:hover .graphic-title {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
 @media (max-width: 768px) {
     .arriba, .graphics-row {
         flex-direction: column;
