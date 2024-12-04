@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #fafafa;
+    color: #333;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #5da041;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+h1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, rgba(93, 160, 65, 1) 0%, rgb(97, 194, 97) 100%);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#seleccionador1, #seleccionador2 {
+    margin: 10px 0;
+}
+
+#seleccionador1 label, #seleccionador2 label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#seleccion1, #seleccion2 {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#button {
+    margin: 20px 0;
+}
+
+#buscar {
+    padding: 10px 20px;
+    background-color: #5da041;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#buscar:hover {
+    background-color: #469737;
+    transform: scale(1.05);
+}
+
+#div-tabla {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.2em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+thead {
+    background-color: #5da041;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 2px solid #000; /* Borde negro en todas las caras */
+}
+
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+tbody td {
+    position: relative;
+}
+
+tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #009879;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: left;
+    display: none;
+}
+
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        display: none;
+    }
+
+    tbody tr {
+        margin-bottom: 15px;
+    }
+
+    tbody td {
+        display: block;
+        text-align: right;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    tbody td::before {
+        display: block;
+        text-align: left; /* Alinea el texto a la izquierda */
+        background-color: transparent; /* Elimina el fondo */
+        color: #333; /* Color de texto para el pseudoelemento */
+        font-weight: normal; /* Font weight normal para el pseudoelemento */
+    }
+
+    tbody td:last-child {
+        border-bottom: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    #div-tabla {
+        overflow-x: auto; /* Asegura que el contenedor tenga desplazamiento horizontal */
+    }
+
+    table {
+        width: 100%;
+        min-width: 300px; /* Permite que la tabla sea más pequeña en pantallas pequeñas */
+        font-size: 1em;
+    }
+
+
+    tbody td {
+        display: block;
+        text-align: right;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    tbody td::before {
+        display: block;
+    }
+
+    tbody td:last-child {
+        border-bottom: 0;
+    }
+}

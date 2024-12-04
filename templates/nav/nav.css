@@ -8,7 +8,7 @@ nav {
     background-color: #5da041;
     color: white;
     position: relative;
-    z-index: 1000; /* Alta prioridad para superponerse */
+    z-index: 1000; 
 }
 
 .menu-toggle {
@@ -18,13 +18,13 @@ nav {
     position: absolute;
     right: 20px;
     top: 15px;
-    z-index: 1001; /* Más alto que el nav */
+    z-index: 1001;
 }
 
 .menu-toggle span {
     width: 25px;
     height: 3px;
-    background: white;
+    background: rgb(192, 190, 190);
     margin: 4px 0;
     transition: 0.4s;
 }
@@ -34,7 +34,7 @@ ul.menu {
     margin: 0;
     padding: 0;
     display: flex;
-    z-index: 999; /* Asegura que esté en la capa correcta */
+    z-index: 999; 
 }
 
 ul.menu li {

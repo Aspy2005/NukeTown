@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../templates/nav/nav.css">
+    <link rel="stylesheet" href="../templates/footer/footer.css">
+    <link rel="stylesheet" href="../assets/css/Tabla/styletabla.css">
     <script src="../assets/js/tabla/tabla.js"></script>
 </head>
 <body>
 
+
+    <nav>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="menu" id="menu">
+                <li>
+                    <img src="../templates/nav/iconosnav/logo.png" id="logo" alt="Logo">
+                </li>
+                <li>
+                    <img src="../templates/nav/iconosnav/casita.png" alt="Inicio">
+                    <a href="../inicio/Inicio.html">Inicio</a>
+                </li>
+                <li>
+                    <img src="../templates/nav/iconosnav/documento.png" alt="DashBoard/Base de Datos">
+                    <a href="../dashboard/dashboard.html">DashBoard/Base de Datos</a>
+                </li>
+                <li>
+                    <img src="../templates/nav/iconosnav/calculadora.png" alt="Calculadora Consumo">
+                    <a href="../calculadora/calculadora.html">Calculadora Consumo</a>
+                </li>
+            </ul>
+        </nav>
+        <script src="/templates/nav/botoninicio.js"></script>
+
+
+    <section class="contenedor">
+        <h1>Tabla de Energias Renovables Compartidas</h1>
     <div id="seleccionador1">
         <label for="prueba">Selecciona el pais</label>
         <select name="prueba" id="seleccion1">
@@ -39,5 +72,16 @@
             <tbody></tbody>
         </table>
     </div>
+</section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Energías Renovables. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#privacy">Política de Privacidad</a></li>
+                <li><a href="#contact">Contáctanos</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
