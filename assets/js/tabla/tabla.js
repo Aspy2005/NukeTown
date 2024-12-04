@@ -1,5 +1,5 @@
 async function fetchCSV(select1, select2) {
-    const response = await fetch('../csv/01 renewable-share-energy.csv'); // Cargar archivo CSV
+    const response = await fetch('../csv/12 solar-energy-consumption.csv'); // Cargar archivo CSV
     const data = await response.text(); // Leerlo como texto
 
     const rows = data.split('\n').slice(1); // Dividir en filas y eliminar encabezado
