@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grafica de area</title>
+    <title>Gráfica de Área</title>
+    <link rel="stylesheet" href="../assets/css/graficabarras/stylebarras.css">
     <link rel="stylesheet" href="../templates/nav/nav.css">
     <script src="../assets/js/graficaarea/graficaarea.js"></script>
 </head>
@@ -15,48 +16,55 @@
             <span></span>
         </div>
         <ul class="menu" id="menu">
-                <li>
-                    <img src="../templates/nav/iconosnav/logo.png" id="logo" alt="Logo">
-                </li>
-                <li>
-                    <img src="../templates/nav/iconosnav/casita.png" alt="Inicio">
-                    <a href="../inicio/Inicio.html">Inicio</a>
-                </li>
-                <li>
-                    <img src="../templates/nav/iconosnav/documento.png" alt="DashBoard/Base de Datos">
-                    <a href="../dashboard/dashboard.html">DashBoard/Base de Datos</a>
-                </li>
-                <li>
-                    <img src="../templates/nav/iconosnav/calculadora.png" alt="Calculadora Consumo">
-                    <a href="../calculadora/calculadora.html">Calculadora Consumo</a>
-                </li>
-            </ul>
-        </nav>
-        <script src="/templates/nav/botoninicio.js"></script>
+            <li>
+                <img src="../templates/nav/iconosnav/logo.png" id="logo" alt="Logo">
+            </li>
+            <li>
+                <img src="../templates/nav/iconosnav/casita.png" alt="Inicio">
+                <a href="../inicio/Inicio.html">Inicio</a>
+            </li>
+            <li>
+                <img src="../templates/nav/iconosnav/documento.png" alt="DashBoard/Base de Datos">
+                <a href="../dashboard/dashboard.html">DashBoard/Base de Datos</a>
+            </li>
+            <li>
+                <img src="../templates/nav/iconosnav/calculadora.png" alt="Calculadora Consumo">
+                <a href="../calculadora/calculadora.html">Calculadora Consumo</a>
+            </li>
+        </ul>
+    </nav>
+    <script src="/templates/nav/botoninicio.js"></script>
 
-    <div id="div-area">
-        <canvas id="graficaarea" width="50" height="50"></canvas>
-    </div>
-    <div>
-        <button id="eolica">ver tabla</button>
-    </div>
-
-    <div id="tabladiv">
-        <table id="tabladatos">
-            <thead>
-                <tr>
-                    <th>Entity</th>
-                    <th>Code</th>
-                    <th>Year</th>
-                    <th>Electricity Geo Biomas</th>
-                    <th>Electricity Solar</th>
-                    <th>Electricity wind</th>
-                    <th>Electricity Hydro</th>
-                </tr>
-            </thead>
-        
-        <tbody></tbody>
-    </table>
+    <div id="contenedor">
+        <!-- Gráfica de área -->
+        <div id="graficaytabla">
+            <div id="div-area">
+                <canvas id="graficaarea" width="800" height="800"></canvas>
+            </div>
+            
+            <!-- Botón relacionado -->
+            
+            <!-- Tabla de datos -->
+            <div id="tabladivarea">
+                <div id="menucsv">
+                    <button id="eolica">Ver Tabla</button>
+                </div>
+                <table id="tabladatos">
+                    <thead id="area">
+                        <tr>
+                            <th>Entity</th>
+                            <th>Code</th>
+                            <th>Year</th>
+                            <th>Electricity Geo Biomas</th>
+                            <th>Electricity Solar</th>
+                            <th>Electricity Wind</th>
+                            <th>Electricity Hydro</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

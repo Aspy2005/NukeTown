@@ -30,7 +30,10 @@ body {
 }
 
 #barragrafico, 
-#tabladiv {
+#tabladiv, 
+#div-area, 
+#divtorta, 
+#tabladivarea {
     flex: 1;
     margin: 15px;
     padding: 20px;
@@ -39,11 +42,11 @@ body {
     text-align: center;
     border-radius: 8px;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    width: 30rem;
+    width: 30rem; /* Valor común para mantener consistencia */
 }
 
-#divtorta{
-    width: 30rem;
+#tabladivarea {
+    width: 50rem;
 }
 
 #menucsv {
@@ -63,7 +66,7 @@ body {
 }
 
 #menucsv button:hover {
-    background-color: #5da041;
+    background-color: #469737;
     transform: scale(1.1);
 }
 
@@ -90,30 +93,37 @@ th, td {
     }
 
     #barragrafico, 
-    #tabladiv {
+    #tabladiv, 
+    #div-area, 
+    #divtorta, 
+    #tabladivarea {
         flex: 1 1 100%;
         margin: 15px 0;
+        width: 90%; /* Ajustes para pantallas más pequeñas */
     }
 }
 
 @media (max-width: 400px) {
     #graficaytabla {
-        flex-direction: column; 
-        align-items: center; 
-    } 
+        flex-direction: column;
+        align-items: center;
+    }
+
     #barragrafico, 
-    #tabladiv { 
-        flex: 1 1 100%; 
-        margin: 10px 0; 
-        width: 100%;  
-    } 
-    table { 
-        font-size: 0.8rem;  
-    } 
-    th, td { 
-        padding: 6px; 
-    } 
-    #divtorta{
-        width: 20rem;
+    #tabladiv, 
+    #div-area, 
+    #divtorta, 
+    #tabladivarea {
+        flex: 1 1 100%;
+        margin: 10px 0;
+        width: 100%; /* Ajustes para pantallas más pequeñas */
+    }
+
+    table {
+        font-size: 0.8rem;
+    }
+
+    th, td {
+        padding: 6px;
     }
 }
