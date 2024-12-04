@@ -128,6 +128,42 @@ async function createAreaChart() {
         }
     });
 }
+async function cargarCSV() {
+    try {
+        const respuesta = await fetch("../csv/indefinidos.csv"); // Cargar el archivo CSV
+        const texto = await respuesta.text(); // Leer el contenido como texto
+
+        const lineas = texto.split("\n"); // Dividir el contenido por líneas
+        const encabezados = lineas[0].split(","); // Obtener los encabezados (primera línea)
+        const cuerpo = lineas.slice(1); // Obtener las filas de datos
+
+        const tbody = document.querySelector("#tabladatos tbody");
+
+        console.log(tbody);
+        // Recorrer cada línea de datos
+        cuerpo.forEach((linea) => {
+            const columnas = linea.split(","); // Dividir las columnas por coma
+            // Verificar que la línea tenga el número correcto de columnas
+            if (columnas.length === encabezados.length) { 
+                const fila = document.createElement("tr");
+
+                // Crear celdas para cada columna
+                columnas.forEach((dato) => {
+                    const celda = document.createElement("td");
+                    celda.textContent = dato.trim();
+                    fila.appendChild(celda);
+                });
+
+                tbody.appendChild(fila); // Añadir la fila al cuerpo de la tabla
+            }
+        });
+    } catch (error) {
+        console.error("Error al cargar el archivo CSV:", error);
+    }
+}
+
+// Llamar a la función para cargar el CSV
+cargarCSV();
 
 
 createChartbar();
