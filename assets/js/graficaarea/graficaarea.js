@@ -40,8 +40,83 @@ async function filtrar() {
     };
 }
 
+
+async function createAreaChart() {
+
+    try{
+        result = await filtrar();
+        const ctx = document.getElementById('graficaarea').getContext('2d');
+        new Chart(ctx, {
+            type: 'line', // Gráfico de área (basado en líneas)
+            data: {
+                labels: result.years, // Años en el eje X
+                datasets: [
+                    {
+                        label: 'Energía de Biomasa y Geotérmica',
+                        data: result.biomass,
+                        fill: true,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Energía Solar',
+                        data: result.solar,
+                        fill: true,
+                        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                        borderColor: 'rgba(255, 206, 86, 1)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Energía Eólica',
+                        data: result.wind,
+                        fill: true,
+                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Energía Hidroeléctrica',
+                        data: result.hydro,
+                        fill: true,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Año'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Consumo de Energía (TWh)'
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }catch(error){
+        createAreaChart();
+    }
+    
+}
+
 // Usar la función para obtener datos clasificados y graficar
-filtrar().then(result => {
+/*filtrar().then(result => {
     const ctx = document.getElementById('graficaarea').getContext('2d');
     new Chart(ctx, {
         type: 'line', // Gráfico de área (basado en líneas)
@@ -106,7 +181,7 @@ filtrar().then(result => {
             }
         }
     });
-});
+});*/
 
 
 
@@ -157,6 +232,6 @@ async function mostrartabla(select) {
 }
 
 
-filtrar();
+createAreaChart();
 
 

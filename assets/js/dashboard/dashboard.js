@@ -24,109 +24,132 @@ async function fetchCSV() {
 
 async function createChartbar() {
 
-    const data = await fetchCSV();
+    try{
+        const data = await fetchCSV();
 
 
-    const ctx = document.getElementById('graficabarras').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar', 
-        data: {
-            labels: data.labels, 
-            datasets: [{
-                label: 'notas',
-                data: data.values, 
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true 
+        const ctx = document.getElementById('graficabarras').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar', 
+            data: {
+                labels: data.labels, 
+                datasets: [{
+                    label: 'notas',
+                    data: data.values, 
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true 
+                    }
                 }
             }
-        }
-    });
+        });
+    }catch(error){
+        createChartbar();
+    }
+
+
 }
 
 async function createPieChart() {
 
-    const data = await fetchCSV();
+    try{
+        const data = await fetchCSV();
 
-    const ctx = document.getElementById('graficacircular').getContext('2d');
-    new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: data.labels,
-            datasets: [{
-                data: data.values,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.6)',
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(255, 206, 86, 0.6)',
-                    'rgba(75, 192, 192, 0.6)',
-                    'rgba(153, 102, 255, 0.6)'
-                ],
-                borderWidth: 1
-            }]
-        }
-    });
+        const ctx = document.getElementById('graficacircular').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: data.labels,
+                datasets: [{
+                    data: data.values,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(153, 102, 255, 0.6)'
+                    ],
+                    borderWidth: 1
+                }]
+            }
+        })
+    }catch(error){
+        createPieChart();
+    }
+
+;
 }
 
 async function createLineChart() {
 
-    const data = await fetchCSV();
+    try{
+        const data = await fetchCSV();
 
-    const ctx = document.getElementById('graficalinea').getContext('2d');
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: data.labels,
-            datasets: [{
-                label: 'Dataset de Líneas',
-                data: data.values,
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+        const ctx = document.getElementById('graficalinea').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.labels,
+                datasets: [{
+                    label: 'Dataset de Líneas',
+                    data: data.values,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
+        });
+    }catch(error){
+        createLineChart();
+    }
+
+
 }
 
 async function createAreaChart() {
+    try{
+        const data = await fetchCSV();
 
-    const data = await fetchCSV();
-
-    const ctx = document.getElementById('graficaarea').getContext('2d');
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: data.labels,
-            datasets: [{
-                label: 'Dataset de Área',
-                data: data.values,
-                borderColor: 'rgba(153, 102, 255, 1)',
-                backgroundColor: 'rgba(153, 102, 255, 0.3)',
-                borderWidth: 2,
-                fill: true 
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+        const ctx = document.getElementById('graficaarea').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.labels,
+                datasets: [{
+                    label: 'Dataset de Área',
+                    data: data.values,
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    backgroundColor: 'rgba(153, 102, 255, 0.3)',
+                    borderWidth: 2,
+                    fill: true 
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
+        });
+    }catch(error){
+        createAreaChart();
+    }
+
+    
 }
 async function cargarCSV() {
     try {
@@ -159,6 +182,7 @@ async function cargarCSV() {
         });
     } catch (error) {
         console.error("Error al cargar el archivo CSV:", error);
+        cargarCSV();
     }
 }
 
